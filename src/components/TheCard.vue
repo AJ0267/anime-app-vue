@@ -15,14 +15,14 @@
       />
     </figure>
     <p class="mb-2 ml-2 text-base-content">{{ anime.title }}</p>
-    <!-- Dynamically display anime title -->
+    
   </a>
 </template>
 
 <script setup>
 import { defineProps } from "vue";
 
-// Define props for the Card component
+
 const props = defineProps({
   anime: {
     type: Object,

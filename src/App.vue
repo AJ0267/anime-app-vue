@@ -43,23 +43,23 @@ import ThemeControl from "./components/UI/ThemeControl.vue";
 const search_query = ref("");
 const animelist = ref([]);
 
-// Define the HandleSearch function
+
 const HandleSearch = async () => {
-  if (search_query.value.trim() === "") return; // Avoid empty searches
+  if (search_query.value.trim() === "") return;
 
   const url = `https://api.jikan.moe/v4/anime?q=${encodeURIComponent(
     search_query.value
-  )}&sfw=true`; // Construct the URL with the query
+  )}&sfw=true`; 
 
   try {
-    const response = await axios.get(url); // Use the constructed URL for the GET request
-    console.log(response.data); // Log the response data for inspection
-    animelist.value = response.data.data || []; // Store the results in animelist
+    const response = await axios.get(url); 
+    console.log(response.data); 
+    animelist.value = response.data.data || []; 
   } catch (error) {
-    console.error("Error fetching data:", error); // Log any errors
+    console.error("Error fetching data:", error); 
   }
 
-  search_query.value = ""; // Clear the input after the search
+  search_query.value = ""; 
 };
 </script>
 
